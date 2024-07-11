@@ -1,0 +1,415 @@
+===========================================ARRAYLIST===============================================
+
+import java.lang.reflect.Array;
+import java.util.*;
+
+//===================================Easy level===================================================
+
+//1. Programm to print only even numbers from arraylist:
+//public class Main {
+//    public static void PrintEven(ArrayList<Integer> list){
+//        for(int i=0;i<list.size();i++){
+//            if(list.get(i)%2==0){
+//                System.out.println(list.get(i));
+//            }
+//        }
+//    }
+//    public static void main(String[] args) {
+//        ArrayList<Integer> list=new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//        list.add(4);
+//        list.add(5);
+//        list.add(6);
+//        PrintEven(list);
+//    }
+//}
+
+//2. Given an ArrayList of strings, write a program to find and print the longest string.
+//public class Main{
+//    public static String LongestString(ArrayList<String> str){
+//        String longest=" ";
+//        for(String s:str){
+//            if(s.length() > longest.length()){
+//                longest=s;
+//            }
+//        }
+//        return longest;
+//    }
+//    public static void main(String[] args) {
+//        ArrayList<String> str=new ArrayList<>();
+//        str.add("Sonusanju");
+//        str.add("Ankitkumar");
+//        str.add("Arvisona");
+//        System.out.println("Strings are:"+str);
+//        System.out.println("Longest String among them is: "+LongestString(str));
+//    }
+//}
+
+//3.Program to remove all duplictaes from arraylist:
+//public class Main{
+//    public static ArrayList<Integer> removeDuplicates(ArrayList<Integer> numbers) {
+//        ArrayList<Integer> uniqueNumbers = new ArrayList<Integer>();
+//        for (Integer number : numbers) {
+//            if (!uniqueNumbers.contains(number)) {
+//                uniqueNumbers.add(number);
+//            }
+//        }
+//        return uniqueNumbers;
+//    }
+//    public static void main(String[]args){
+//        ArrayList<Integer> numbers = new ArrayList<Integer>();
+//        numbers.add(1);
+//        numbers.add(2);
+//        numbers.add(2);
+//        numbers.add(3);
+//        numbers.add(3);
+//        numbers.add(3);
+//        numbers.add(4);
+//        numbers.add(5);
+//        numbers.add(5);
+//        ArrayList<Integer> uniqueNumbers = removeDuplicates(numbers);
+//        System.out.println("Unique numbers: " + uniqueNumbers);
+//    }
+//}
+
+//4. Write a Java program to create an array list, add some colors (strings) and print out the collection.
+//public class Main{
+//    public static void main(String[] args) {
+//        ArrayList<String> str=new ArrayList<>();
+//        str.add("Violet");
+//        str.add("Blue");
+//        str.add("Indigo");
+//        str.add("green");
+//        str.add("yellow");
+//        str.add("orange");
+//        str.add("red");
+//        System.out.println("Colors are:");
+//        for(String s:str){
+//            System.out.println(s);
+//        }
+//    }
+//}
+
+//5. Write a Java program to insert an element into the array list at the first position.
+//public class Main{
+//    public static void main(String[] args) {
+//        ArrayList list = new ArrayList();
+//        list.add(1);
+//        list.add(3);
+//        list.add(5);
+//        list.add(1,200);
+//        System.out.println(list);
+//    }
+//}
+
+//6.Write a Java program to search for an element in an array list.
+//public class Main {
+//    public static boolean search(ArrayList list,int element){
+//        if(list.contains(element))
+//            return true;
+//        else return false;
+//    }
+//    public static void main(String[] args) {
+//        ArrayList list = new ArrayList();
+//        list.add(1);
+//        list.add(3);
+//        list.add(5);
+//        System.out.println(search(list, 3));
+//        System.out.println(search(list,8));
+//    }
+//}
+
+//7.. Write a Java program to sort a given array list.
+//public class Main {
+//    public static void main(String[] args) {
+//ArrayList<String> list = new ArrayList<>();
+//list.add("Baby");
+//list.add("Amili");
+//list.add("Cat");
+//list.add("frog");
+//list.add("Duck");
+//        System.out.println("Arraylist before sorting"+ list);
+//        Collections.sort(list);
+//        System.out.println("Arraylist after sorting"+list);
+//    }
+//}
+
+//8.. . Write a Java program to copy one array list into another.
+//public class Main {
+//    public static void main(String[] args) {
+//        List<String> List1 = new ArrayList<String>();
+//        List1.add("1");
+//        List1.add("2");
+//        List1.add("3");
+//        List1.add("4");
+//        System.out.println("List1: " + List1);
+//        List<String> List2 = new ArrayList<String>();
+//        List2.add("A");
+//        List2.add("B");
+//        List2.add("C");
+//        List2.add("D");
+//        System.out.println("List2: " + List2);
+//        // Copy List2 to List1
+//        Collections.copy(List1, List2);
+//        System.out.println("Copy List to List2,\nAfter copy:");
+//        System.out.println("List1: " + List1);
+//        System.out.println("List2: " + List2);
+//    }
+//}
+
+//9..Java program to swapp elements in arraylist.
+//public class Main{
+//    public static void main(String[] args) {
+//        ArrayList<String> c1= new ArrayList<String>();
+//        c1.add("Red");
+//        c1.add("Green");
+//        c1.add("Black");
+//        c1.add("White");
+//        c1.add("Pink");
+//
+//        System.out.println("Array list before Swap:"+c1);
+//        //Swapping 1st(index 0) element with the 3rd(index 2) element
+//        Collections.swap(c1, 0, 2);
+//        System.out.println("Array list after swap:"+c1);
+//    }
+//}
+
+//10.Count the frequency of the elements in the arraylist:
+//The frequency() method returns the number of elements in the collections c equal to the specified object obj.
+
+//public class Main {
+//    public static void main(String[] args) {
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(3);
+//        list.add(2);
+//        list.add(4);
+//        list.add(5);
+//        list.add(2);
+//        System.out.println("Frequecy of elements  2 is:"+Collections. frequency(list,2));
+//    }
+//}
+
+
+//============================Medium level==============================
+
+//11.Given two ArrayLists of integers, write a program to merge them and sort the resulting ArrayList in ascending order.
+//public class Main{
+//    public static void main(String[] args) {
+//        ArrayList<Integer> list1 = new ArrayList<Integer>();
+//        list1.add(2);
+//        list1.add(7);
+//        list1.add(5);
+//
+//        ArrayList<Integer> list2 = new ArrayList<Integer>();
+//        list2.add(1);
+//        list2.add(4);
+//        list2.add(6);
+//
+//        // Merge both ArrayLists
+//        list1.addAll(list2);
+//
+//        // Sort the merged ArrayList in ascending order
+//        Collections.sort(list1);
+//
+//        System.out.println("Merged and sorted ArrayList: " + list1);
+//    }
+//}
+
+//12.Write a Java program to find the second largest element in an ArrayList of integers.
+//public class Main {
+//    public static void main(String[] args) {
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(7);
+//        list.add(1);
+//        list.add(3);
+//        list.add(5);
+//        list.add(2);
+//        list.add(4);
+//
+//        int max = Integer.MIN_VALUE;
+//        int secondMax = Integer.MIN_VALUE;
+//
+//        for (int num : list) {
+//            if (num > max) {
+//                secondMax = max;
+//                max = num;
+//            }
+//            else if (num > secondMax && num < max) {
+//                secondMax = num;
+//            }
+//        }
+//        System.out.println("Second largest element: " + secondMax);
+//    }
+//}
+
+
+==================================GFG-======================
+import java.util.*;
+// TODO: Implement this method to remove duplicate elements from a linked list.
+// Example: Input: 1 -> 2 -> 3 -> 2 -> 4 -> 5 -> 2 -> 3, Output: 1 -> 2 -> 3 -> 4 -> 5
+// Constraints: The linked list may contain up to 10^6 nodes.
+// Time complexity: O(n), where n is the number of nodes in the linked list.
+// Space complexity: O(1) (constant space).
+
+public class RemoveDuplicatesLinkedList {
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    public static  class Linkedlist {
+
+        //function to remove duplicates from liked list:
+        public Node removeDuplicates(Node head) {
+            if (head == null || head.next == null) return head;
+            Node current = head;
+            while (current != null && current.next != null) {
+                if (current.data == current.next.data) {
+                    current.next = current.next.next;
+                } else {
+                    current = current.next;
+                }
+            }
+            return head;  // Return the head of the modified linked list.
+        }
+
+        //function to print the linked list:
+        void printList(Node head){
+            Node temp = head;
+            while (temp!= null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        Node a=new Node(1);
+        a.next=new Node(2);
+        a.next.next=new Node(3);
+        a.next.next.next=new Node(2);
+        a.next.next.next.next=new Node(4);
+        a.next.next.next.next.next=new Node(5);
+        a.next.next.next.next.next.next=new Node(2);
+        a.next.next.next.next.next.next.next=new Node(3);
+        Linkedlist list = new Linkedlist();
+        System.out.println("Original Linked List:");
+        list.printList(a);
+        System.out.println("After removing duplicates:");
+        a = list.removeDuplicates(a);
+        list.printList(a);
+    }
+}
+
+public class EquilibriumPointArray {
+    public static int findEquilibrium(int[] nums) {
+        int n = nums.length;
+        int sum = 0;
+        for (int num : nums) sum += num;
+        int leftSum = 0;
+        for (int i = 0; i < n; i++) {
+            int Wholesum=sum-leftSum-nums[i];
+            if (leftSum == Wholesum) return i+1;
+            leftSum += nums[i];
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        int arr[]={1,3,5,2,2};
+        int idx=findEquilibrium(arr);
+        System.out.println("Equilibrium point is :");
+        System.out.println(idx);
+
+    }
+}
+
+
+=========================STRINGS======================================
+import static java.lang.Float.parseFloat;
+
+
+public class StringComparefractionsgfg {
+    static String Comparefractions(String s1, String s2){
+        float a = parseFraction(s1);
+        float b = parseFraction(s2);
+
+        if (a > b) {
+            System.out.println("The greater is:");
+            return s1;
+        }
+        if (a < b) {
+            System.out.println("The greater is:");
+            return s2;
+        }
+        return "equal";
+    }
+
+    static float parseFraction(String fraction) {
+        String[] parts = fraction.split("/");
+        float numerator = Float.parseFloat(parts[0]);
+        float denominator = Float.parseFloat(parts[1]);
+        return numerator / denominator;
+    }
+
+    public static void main(String[] args) {
+        String s1 = "1/3";
+        String s2 = "1/2";
+        System.out.println(Comparefractions(s1, s2));
+    }
+}
+
+//----------------------------------GFG POTD-----------------
+
+//You are given one string having two fractions and you have to comapre which one is gerater--------------------
+class Solution {
+    static float parseFraction(String fraction) {
+        String[] parts = fraction.split("/");
+        float numerator = Float.parseFloat(parts[0]);
+        float denominator = Float.parseFloat(parts[1]);
+        return numerator / denominator;
+    }
+
+    String compareFrac(String str) {
+        // Split the input string to get the two fractions
+        String[] fractions = str.split(", ");
+        String frac1 = fractions[0];
+        String frac2 = fractions[1];
+
+        // Parse the fractions to get their float values
+        float value1 = parseFraction(frac1);
+        float value2 = parseFraction(frac2);
+
+        // Compare the float values
+        if (value1 > value2) {
+            return frac1;
+        } else if (value1 < value2) {
+            return frac2;
+        } else {
+            return "equal";
+        }
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        // Test cases
+        String test1 = "5/6, 11/45";
+        System.out.println(solution.compareFrac(test1)); // Output: 5/6
+
+        String test2 = "8/1, 8/1";
+        System.out.println(solution.compareFrac(test2)); // Output: equal
+
+        String test3 = "10/17, 9/10";
+        System.out.println(solution.compareFrac(test3)); // Output: 9/10
+    }
+}
+
